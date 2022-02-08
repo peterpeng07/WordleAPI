@@ -1,7 +1,5 @@
-from operator import methodcaller
-from urllib import request
 import flask
-import request
+from flask import request
 
 app = flask.Flask(__name__)
 
