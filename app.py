@@ -57,11 +57,28 @@ def home():
     for i in excludeList:
         exclude.append(i)
 
-    return '''
-          req: {}
-          include: {}
-          exclude: {}
-    '''.format(req, include, exclude)
+    for word in words:
+        if re.search(req, word):
+            valid = True
+            for i in include:
+                if (i[0] not in word) or (word[i[1]] == i[0]):
+                    valid = False
+                    break
+            if valid:
+                for e in exclude:
+                    if e in word:
+                        valid = False
+                        break
+            if valid:
+                result.append(word)
+
+    return result
+
+    # '''
+    #       req: {}
+    #       include: {}
+    #       exclude: {}
+    # '''.format(req, include, exclude)
 
  # 1: {}
     # 2: {}
