@@ -14,7 +14,7 @@ def load_words(fname):
 app = flask.Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def home():
     request_data = request.get_json()
 
@@ -75,15 +75,3 @@ def home():
                 result.append(word)
 
     return jsonify(result)
-
-    # '''
-    #       req: {}
-    #       include: {}
-    #       exclude: {}
-    # '''.format(req, include, exclude)
-
- # 1: {}
-    # 2: {}
-    # 3: {}
-    # 4: {}
-    # 5: {}
