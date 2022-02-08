@@ -1,5 +1,6 @@
 import flask
 from flask import request
+import re
 
 
 def load_words(fname):
