@@ -1,5 +1,6 @@
 import flask
 from flask import request
+from flask import jsonify
 import re
 
 
@@ -73,7 +74,7 @@ def home():
             if valid:
                 result.append(word)
 
-    return result
+    return jsonify(result)
 
     # '''
     #       req: {}
