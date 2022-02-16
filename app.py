@@ -14,8 +14,13 @@ app = flask.Flask(__name__)
 CORS(app)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def home():
+    return "Welcome to Wordle Solver API!"
+
+
+@app.route('/', methods=['POST'])
+def search():
     request_data = request.get_json()
 
     first = request_data['first']
