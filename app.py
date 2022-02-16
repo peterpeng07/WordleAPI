@@ -7,7 +7,6 @@ import re
 def load_words(fname):
     with open(fname) as word_file:
         valid_words = set(word_file.read().split())
-
     return valid_words
 
 
