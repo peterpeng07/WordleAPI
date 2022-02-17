@@ -84,4 +84,4 @@ def search():
             if valid:
                 result.append(word)
 
-    return jsonify(result)
+    return jsonify(["test", "test1"])
