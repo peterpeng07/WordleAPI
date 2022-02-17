@@ -19,6 +19,11 @@ def home():
     return "Welcome to Wordle Solver API!"
 
 
+@app.route('/test', methods=['POST'])
+def test():
+    return jsonify(["test", "test1"])
+
+
 @app.route('/', methods=['POST'])
 def search():
     request_data = request.get_json()
