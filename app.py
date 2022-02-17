@@ -89,4 +89,4 @@ def search():
     lists = ["s", "s", "A"]
     lists.append(first)
     lists.append(second)
-    return jsonify(lists)
+    return jsonify(result)
