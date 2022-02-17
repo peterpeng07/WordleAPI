@@ -33,8 +33,8 @@ def search():
     third = request_data['third'].lower()
     fourth = request_data['fourth'].lower()
     fifth = request_data['fifth'].lower()
-    includeList = request_data['includeList'].lower()
-    excludeList = request_data['excludeList'].lower()
+    includeList = request_data['includeList']
+    excludeList = request_data['excludeList']
 
     words = load_words('words_5.txt')
     req = ''
@@ -64,10 +64,10 @@ def search():
         req += '.'
 
     for w in includeList:
-        include.append((w['letter'], w['position']))
+        include.append((w['letter'].lower(), w['position']))
 
     for i in excludeList:
-        exclude.append(i)
+        exclude.append(i.lower())
 
     for word in words:
         if re.search(req, word):
