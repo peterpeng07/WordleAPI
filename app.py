@@ -28,13 +28,13 @@ def test():
 def search():
     request_data = request.get_json()
 
-    first = request_data['first']
-    second = request_data['second']
-    third = request_data['third']
-    fourth = request_data['fourth']
-    fifth = request_data['fifth']
-    includeList = request_data['includeList']
-    excludeList = request_data['excludeList']
+    first = request_data['first'].lower()
+    second = request_data['second'].lower()
+    third = request_data['third'].lower()
+    fourth = request_data['fourth'].lower()
+    fifth = request_data['fifth'].lower()
+    includeList = request_data['includeList'].lower()
+    excludeList = request_data['excludeList'].lower()
 
     words = load_words('words_5.txt')
     req = ''
@@ -84,9 +84,4 @@ def search():
             if valid:
                 result.append(word)
 
-    # return jsonify(["test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1", "test", "test1"])
-    # lis = result
-    lists = ["s", "s", "A"]
-    lists.append(first)
-    lists.append(second)
     return jsonify(result)
